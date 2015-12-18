@@ -1,0 +1,28 @@
+{
+  "name": "neokike/laravel-elasticsearch",
+  "description": "Package for searching with elasticsearch eloquently",
+  "type": "laravel 5, search, elasticsearch",
+  "license": "MIT License",
+  "authors": [
+    {
+      "name": "Pedro Gorrin",
+      "email": "pedro.gorrin@ngncloud.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.4.0",
+    "laravel/framework": "4.*|5.*"
+  },
+  "require-dev": {
+    "fzaninotto/faker": "~1.4",
+    "mockery/mockery": "0.9.*",
+    "phpunit/phpunit": "~4.0",
+    "phpspec/phpspec": "~2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Neokike\\LaravelElasticsearch\\": "src/"
+    }
+  }
+}
