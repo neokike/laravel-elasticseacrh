@@ -11,8 +11,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "php": ">=5.4.0",
-    "laravel/framework": "4.*|5.*"
+    "php": ">=5.4.0"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",

@@ -1,0 +1,7 @@
+suites:
+    main:
+        namespace: Neokike\LaravelElasticsearch\
+        psr4_prefix: Neokike\LaravelElasticsearch\
+        src_path: src
+        spec_path: tests
+        spec_prefix: specs
