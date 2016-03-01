@@ -4,11 +4,6 @@ namespace Neokike\LaravelElasticsearch;
 
 use Neokike\LaravelElasticsearch\Exceptions\DuplicatedSearchConstraintException;
 use Neokike\LaravelElasticsearch\Exceptions\InvalidMethodException;
-use Neokike\LaravelElasticsearch\Queries\Bool\ElasticBoolQuery;
-use Neokike\LaravelElasticsearch\Queries\Match\ElasticMatchAllQuery;
-use Neokike\LaravelElasticsearch\Queries\Match\ElasticMatchPhrasePrefixQuery;
-use Neokike\LaravelElasticsearch\Queries\Match\ElasticMatchPhraseQuery;
-use Neokike\LaravelElasticsearch\Queries\Match\ElasticMatchQuery;
 
 class ElasticQueryBuilder
 {
@@ -20,6 +15,10 @@ class ElasticQueryBuilder
     protected $type;
     protected $search;
 
+    /**
+     * @param $size
+     * @return $this
+     */
     public function size($size)
     {
         $this->size = $size;
@@ -27,6 +26,10 @@ class ElasticQueryBuilder
         return $this;
     }
 
+    /**
+     * @param $source
+     * @return $this
+     */
     public function source($source)
     {
         $this->source = $source;
@@ -34,6 +37,10 @@ class ElasticQueryBuilder
         return $this;
     }
 
+    /**
+     * @param $score
+     * @return $this
+     */
     public function min_score($score)
     {
         $this->min_score = $score;
@@ -41,6 +48,10 @@ class ElasticQueryBuilder
         return $this;
     }
 
+    /**
+     * @param $from
+     * @return $this
+     */
     public function from($from)
     {
         $this->from = $from;
@@ -48,6 +59,10 @@ class ElasticQueryBuilder
         return $this;
     }
 
+    /**
+     * @param $type
+     * @return $this
+     */
     public function type($type)
     {
         $this->type = $type;
@@ -55,13 +70,23 @@ class ElasticQueryBuilder
         return $this;
     }
 
+    /**
+     * @param $search
+     * @return $this
+     * @throws DuplicatedSearchConstraintException
+     */
     public function search($search)
     {
+        $this->checkIfSearchIsDefined();
         $this->search = $search;
 
         return $this;
     }
 
+    /**
+     * @param $aggregates
+     * @return $this
+     */
     public function aggregates($aggregates)
     {
         $this->aggregates = $aggregates;
@@ -69,6 +94,9 @@ class ElasticQueryBuilder
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
     public function get()
     {
         $query['body']['_source'] = $this->source;
@@ -87,6 +115,9 @@ class ElasticQueryBuilder
         return $query;
     }
 
+    /**
+     * @return array
+     */
     public function searchArray()
     {
         $query = [];
@@ -99,6 +130,9 @@ class ElasticQueryBuilder
         return $query;
     }
 
+    /**
+     * @return string
+     */
     public function searchJson()
     {
         return json_encode($this->searchArray());
@@ -118,48 +152,12 @@ class ElasticQueryBuilder
         return null;
     }
 
-    public function match($field, $value, $params = [])
-    {
-        $query = new ElasticMatchQuery($field, $value, $params);
-        $this->search($query);
-
-        return $this;
-    }
-
-    public function matchAll($boost = 1.0)
-    {
-        $query = new ElasticMatchAllQuery($boost);
-        $this->search($query);
-
-        return $this;
-    }
-
-    public function matchPhrase($field, $value, $params = [])
-    {
-        $this->checkIfSearchIsDefined();
-        $query = new ElasticMatchPhraseQuery($field, $value, $params);
-        $this->search($query);
-
-        return $this;
-    }
-
-    public function matchPhrasePreffix($field, $value, $params = [])
-    {
-        $this->checkIfSearchIsDefined();
-        $query = new ElasticMatchPhrasePrefixQuery($field, $value, $params);
-        $this->search($query);
-
-        return $this;
-    }
-
-    public function bool()
-    {
-        $this->checkIfSearchIsDefined();
-        $query = new ElasticBoolQuery();
-        $this->search($query);
-        return $this;
-    }
-
+    /**
+     * @param $method
+     * @param $args
+     * @return $this
+     * @throws InvalidMethodException
+     */
     public function __call($method, $args)
     {
         if (!method_exists($this->search, $method))
@@ -169,6 +167,9 @@ class ElasticQueryBuilder
         return $this;
     }
 
+    /**
+     * @throws DuplicatedSearchConstraintException
+     */
     private function checkIfSearchIsDefined()
     {
         if ($this->search)
