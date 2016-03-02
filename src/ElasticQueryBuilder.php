@@ -14,6 +14,7 @@ class ElasticQueryBuilder
     protected $from;
     protected $type;
     protected $search;
+    protected $raw;
 
     /**
      * @param $size
@@ -99,6 +100,10 @@ class ElasticQueryBuilder
      */
     public function get()
     {
+        if ($this->raw) {
+            return $this->raw;
+        }
+
         $query['body']['_source'] = $this->source;
         if ($this->type)
             $query['type'] = $this->type;
@@ -174,5 +179,15 @@ class ElasticQueryBuilder
     {
         if ($this->search)
             throw new DuplicatedSearchConstraintException;
+    }
+
+    /**
+     * @param mixed $raw
+     * @return ElasticQueryBuilder
+     */
+    public function raw($raw)
+    {
+        $this->raw = $raw;
+        return $this;
     }
 }

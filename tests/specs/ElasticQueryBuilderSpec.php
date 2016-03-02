@@ -61,6 +61,12 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
         $this->aggregates->shouldEqual($aggregates);
     }
 
+    function it_assign_raw_property()
+    {
+        $this->raw(['body' => []])->shouldReturn($this);
+        $this->raw->shouldEqual(['body' => []]);
+    }
+
     function it_return_the_search_array(QueryInterface $search, AggregatesInterface $aggregates)
     {
         $this->size(10);
@@ -83,6 +89,12 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
             ],
             'type' => 'type',
         ]);
+    }
+
+    function it_return_the_raw_search_array()
+    {
+        $this->raw(['body' => []]);
+        $this->get()->shouldReturn(['body' => []]);
     }
 
     function it_returns_the_search_array(QueryInterface $search, AggregatesInterface $aggregates)
@@ -111,43 +123,4 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
         ]));
     }
 
-    function it_define_search_as_a_match_query()
-    {
-        $this->match('field', 'value')->shouldReturn($this);
-
-        $this->search->shouldReturnAnInstanceOf(ElasticMatchQuery::class);
-
-    }
-
-    function it_define_search_as_a_match_phrase_query()
-    {
-        $this->matchPhrase('field', 'value')->shouldReturn($this);
-
-        $this->search->shouldReturnAnInstanceOf(ElasticMatchPhraseQuery::class);
-
-    }
-
-    function it_define_search_as_a_match_phrase_preffix_query()
-    {
-        $this->matchPhrasePreffix('field', 'value')->shouldReturn($this);
-
-        $this->search->shouldReturnAnInstanceOf(ElasticMatchPhrasePrefixQuery::class);
-
-    }
-
-    function it_define_search_as_a_match_all_query()
-    {
-        $this->matchAll('field', 'value')->shouldReturn($this);
-
-        $this->search->shouldReturnAnInstanceOf(ElasticMatchAllQuery::class);
-
-    }
-
-    function it_define_search_as_a_bool_query()
-    {
-        $this->bool()->shouldReturn($this);
-
-        $this->search->shouldReturnAnInstanceOf(ElasticBoolQuery::class);
-
-    }
 }
