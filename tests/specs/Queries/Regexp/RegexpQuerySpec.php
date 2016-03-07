@@ -1,8 +1,8 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\Regexp;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Regexp;
 
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -15,7 +15,7 @@ class RegexpQuerySpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\Regexp\RegexpQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Regexp\RegexpQuery');
     }
 
     function it_returns_regexp_query_as_an_array()

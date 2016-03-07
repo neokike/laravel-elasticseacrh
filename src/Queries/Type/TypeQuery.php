@@ -1,8 +1,8 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Type;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Type;
 
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
 class TypeQuery implements QueryInterface
 {

@@ -1,14 +1,14 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder;
 
-use Neokike\LaravelElasticsearch\Interfaces\AggregatesInterface;
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
-use Neokike\LaravelElasticsearch\Queries\Bool\ElasticBoolQuery;
-use Neokike\LaravelElasticsearch\Queries\Match\ElasticMatchAllQuery;
-use Neokike\LaravelElasticsearch\Queries\Match\ElasticMatchPhrasePrefixQuery;
-use Neokike\LaravelElasticsearch\Queries\Match\ElasticMatchPhraseQuery;
-use Neokike\LaravelElasticsearch\Queries\Match\ElasticMatchQuery;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\AggregatesInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Queries\Bool\ElasticBoolQuery;
+use Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMatchAllQuery;
+use Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMatchPhrasePrefixQuery;
+use Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMatchPhraseQuery;
+use Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMatchQuery;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -16,7 +16,7 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\ElasticQueryBuilder');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\ElasticQueryBuilder');
     }
 
     function it_assign_size_property()

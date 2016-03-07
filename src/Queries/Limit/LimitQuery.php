@@ -1,6 +1,6 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Limit;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Limit;
 
 class LimitQuery
 {

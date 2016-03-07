@@ -1,9 +1,9 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\ConstantScore;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\ConstantScore;
 
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
-use Neokike\LaravelElasticsearch\Queries\Match\ElasticMatchQuery;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMatchQuery;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -12,7 +12,7 @@ class ConstantScoreQuerySpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->beConstructedWith(new ElasticMatchQuery('nombre', 'pedro'), 1.2);
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\ConstantScore\ConstantScoreQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\ConstantScore\ConstantScoreQuery');
     }
 
     function it_returns_the_constant_score_query_as_an_array()

@@ -1,11 +1,11 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Filtered;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Filtered;
 
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
-use Neokike\LaravelElasticsearch\Exceptions\NotEnoughArgumentsException;
-use Neokike\LaravelElasticsearch\Interfaces\FilterInterface;
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\NotEnoughArgumentsException;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\FilterInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
 class ElasticFilteredQuery
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\Fuzzy;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Fuzzy;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -14,7 +14,7 @@ class FuzzyQuerySpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\Fuzzy\FuzzyQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Fuzzy\FuzzyQuery');
     }
 
     function it_returns_the_fuzzy_query_as_an_array()

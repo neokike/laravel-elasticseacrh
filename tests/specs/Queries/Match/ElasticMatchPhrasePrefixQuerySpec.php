@@ -1,8 +1,8 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\Match;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Match;
 
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -12,7 +12,7 @@ class ElasticMatchPhrasePrefixQuerySpec extends ObjectBehavior
     {
         $this->beConstructedWith('field', 'value');
 
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\Match\ElasticMatchPhrasePrefixQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMatchPhrasePrefixQuery');
     }
 
     function it_returns_the_match_phrase_prefix_query_as_an_array()

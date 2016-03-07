@@ -1,9 +1,9 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Match;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Match;
 
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
 class ElasticMatchAllQuery implements QueryInterface
 {

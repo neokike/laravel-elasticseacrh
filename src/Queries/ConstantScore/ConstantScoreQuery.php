@@ -1,9 +1,9 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\ConstantScore;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\ConstantScore;
 
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
 class ConstantScoreQuery implements QueryInterface
 {

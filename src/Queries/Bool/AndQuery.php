@@ -1,8 +1,8 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Bool;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Bool;
 
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
 class AndQuery extends BooleanQueryAbstract
 {

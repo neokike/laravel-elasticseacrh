@@ -1,6 +1,6 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\Common;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Common;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -15,7 +15,7 @@ class ElasticCommonTermsQuerySpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\Common\ElasticCommonTermsQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Common\ElasticCommonTermsQuery');
     }
 
     function it_returns_the_common_terms_query_as_an_array()

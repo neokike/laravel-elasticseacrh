@@ -1,8 +1,8 @@
 <?php
-namespace Neokike\LaravelElasticsearch\Queries\Bool;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Bool;
 
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
 abstract class BooleanQueryAbstract implements QueryInterface
 {

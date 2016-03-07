@@ -1,8 +1,8 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Exists;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Exists;
 
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
 class ExistsQuery implements QueryInterface
 {

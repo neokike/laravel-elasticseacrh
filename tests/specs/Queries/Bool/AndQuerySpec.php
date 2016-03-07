@@ -1,9 +1,9 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\Bool;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Bool;
 
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
-use Neokike\LaravelElasticsearch\Queries\Match\ElasticMatchQuery;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMatchQuery;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -12,7 +12,7 @@ class AndQuerySpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->beConstructedWith([new ElasticMatchQuery('nombre', 'pedro'), new ElasticMatchQuery('nombre', 'pedro2')]);
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\Bool\AndQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Bool\AndQuery');
     }
 
     function it_returns_the_and_query_as_an_array()

@@ -1,9 +1,9 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\DisMax;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\DisMax;
 
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
-use Neokike\LaravelElasticsearch\Queries\Match\ElasticMatchQuery;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMatchQuery;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -12,7 +12,7 @@ class DisMaxQuerySpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->beConstructedWith([new ElasticMatchQuery('nombre', 'pedro'), new ElasticMatchQuery('nombre', 'pedro2')], 1.2, 0.7);
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\DisMax\DisMaxQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\DisMax\DisMaxQuery');
     }
 
     function it_returns_the_dis_max_query_as_an_array()

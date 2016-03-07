@@ -1,8 +1,8 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\QueryString;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\QueryString;
 
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
 class ElasticQueryStringQuery implements QueryInterface
 {

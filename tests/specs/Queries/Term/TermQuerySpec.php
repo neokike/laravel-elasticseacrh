@@ -1,6 +1,6 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\Term;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Term;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -15,7 +15,7 @@ class TermQuerySpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\Term\TermQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Term\TermQuery');
     }
 
     function it_returns_term_query_as_an_array()

@@ -1,6 +1,6 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\Match;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Match;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -10,7 +10,7 @@ class ElasticMatchPhraseQuerySpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->beConstructedWith('field', 'value');
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\Match\ElasticMatchPhraseQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMatchPhraseQuery');
     }
 
     function it_returns_the_match_phrase_query_as_an_array()

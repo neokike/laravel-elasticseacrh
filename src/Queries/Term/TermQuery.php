@@ -1,8 +1,8 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Term;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Term;
 
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
 class TermQuery implements QueryInterface
 {

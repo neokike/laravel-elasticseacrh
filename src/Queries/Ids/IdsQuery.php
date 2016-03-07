@@ -1,9 +1,9 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Ids;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Ids;
 
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
 class IdsQuery implements QueryInterface
 {

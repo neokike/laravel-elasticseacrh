@@ -1,6 +1,6 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\Range;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Range;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -15,7 +15,7 @@ class RangeQuerySpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\Range\RangeQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Range\RangeQuery');
     }
 
     function it_assign_greater_than_equal_option()

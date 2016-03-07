@@ -1,6 +1,6 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\Type;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Type;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -10,7 +10,7 @@ class TypeQuerySpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->beConstructedWith('my_type');
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\Type\TypeQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Type\TypeQuery');
     }
 
     function it_returns_the_type_query_as_an_array()

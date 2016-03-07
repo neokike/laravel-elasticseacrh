@@ -1,9 +1,9 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Range;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Range;
 
-use Neokike\LaravelElasticsearch\Interfaces\FilterInterface;
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\FilterInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
 class RangeQuery implements QueryInterface, FilterInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Bool;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Bool;
 
 class OrQuery extends BooleanQueryAbstract
 {

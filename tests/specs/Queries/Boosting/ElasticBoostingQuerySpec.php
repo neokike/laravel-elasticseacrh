@@ -1,10 +1,10 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\Boosting;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Boosting;
 
-use Neokike\LaravelElasticsearch\Exceptions\DuplicatedSearchConstraintException;
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\DuplicatedSearchConstraintException;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -18,7 +18,7 @@ class ElasticBoostingQuerySpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\Boosting\ElasticBoostingQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Boosting\ElasticBoostingQuery');
     }
 
     function it_assign_positive_query(QueryInterface $query)

@@ -1,11 +1,11 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\Filtered;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Filtered;
 
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
-use Neokike\LaravelElasticsearch\Exceptions\NotEnoughArgumentsException;
-use Neokike\LaravelElasticsearch\Interfaces\FilterInterface;
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\NotEnoughArgumentsException;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\FilterInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -13,7 +13,7 @@ class ElasticFilteredQuerySpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\Filtered\ElasticFilteredQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Filtered\ElasticFilteredQuery');
     }
 
     function it_assign_the_query(QueryInterface $query)

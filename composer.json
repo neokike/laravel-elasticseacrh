@@ -21,7 +21,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Neokike\\LaravelElasticsearch\\": "src/"
+      "Neokike\\LaravelElasticsearchQueryBuilder\\": "src/"
     }
   }
 }

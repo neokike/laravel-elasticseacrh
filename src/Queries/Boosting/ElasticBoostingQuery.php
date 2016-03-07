@@ -1,11 +1,11 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Boosting;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Boosting;
 
-use Neokike\LaravelElasticsearch\Exceptions\DuplicatedSearchConstraintException;
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
-use Neokike\LaravelElasticsearch\Exceptions\NotEnoughArgumentsException;
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\DuplicatedSearchConstraintException;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\NotEnoughArgumentsException;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
 class ElasticBoostingQuery implements QueryInterface
 {

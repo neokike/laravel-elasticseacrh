@@ -1,5 +1,5 @@
 <?php
-namespace Neokike\LaravelElasticsearch\Exceptions;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Exceptions;
 
 use Exception;
 

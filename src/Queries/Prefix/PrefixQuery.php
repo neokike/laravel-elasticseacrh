@@ -1,8 +1,8 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Prefix;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Prefix;
 
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
 class PrefixQuery implements QueryInterface
 {

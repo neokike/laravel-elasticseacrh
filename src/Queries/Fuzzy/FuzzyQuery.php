@@ -1,8 +1,8 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Fuzzy;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Fuzzy;
 
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
 class FuzzyQuery implements QueryInterface
 {

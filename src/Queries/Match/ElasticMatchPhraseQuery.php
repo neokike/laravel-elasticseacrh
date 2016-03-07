@@ -1,6 +1,6 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Match;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Match;
 
 class ElasticMatchPhraseQuery
 {

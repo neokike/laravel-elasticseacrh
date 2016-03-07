@@ -1,8 +1,8 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\Ids;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Ids;
 
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -11,7 +11,7 @@ class IdsQuerySpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->beConstructedWith('my_type', '1');
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\Ids\IdsQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Ids\IdsQuery');
     }
 
     function it_returns_the_ids_query_as_an_array()

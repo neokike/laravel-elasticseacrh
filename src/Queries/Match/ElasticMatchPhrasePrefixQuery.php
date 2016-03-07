@@ -1,8 +1,8 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Match;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Match;
 
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
 
 class ElasticMatchPhrasePrefixQuery
 {

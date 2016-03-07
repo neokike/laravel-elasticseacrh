@@ -1,5 +1,5 @@
 <?php
-namespace Neokike\LaravelElasticsearch\Interfaces;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Interfaces;
 
 interface AggregatesInterface
 {

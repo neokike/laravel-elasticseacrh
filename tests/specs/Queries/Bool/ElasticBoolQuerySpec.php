@@ -1,19 +1,19 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\Bool;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Bool;
 
-use Neokike\LaravelElasticsearch\Exceptions\NotEnoughArgumentsException;
-use Neokike\LaravelElasticsearch\Interfaces\FilterInterface;
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\NotEnoughArgumentsException;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\FilterInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
 
 class ElasticBoolQuerySpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\Bool\ElasticBoolQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Bool\ElasticBoolQuery');
     }
 
     function it_assign_must_query(QueryInterface $query)

@@ -1,8 +1,8 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Common;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Common;
 
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
 class ElasticCommonTermsQuery implements QueryInterface
 {

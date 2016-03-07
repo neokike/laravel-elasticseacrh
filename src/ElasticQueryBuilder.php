@@ -1,9 +1,9 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch;
+namespace Neokike\LaravelElasticsearchQueryBuilder;
 
-use Neokike\LaravelElasticsearch\Exceptions\DuplicatedSearchConstraintException;
-use Neokike\LaravelElasticsearch\Exceptions\InvalidMethodException;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\DuplicatedSearchConstraintException;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidMethodException;
 
 class ElasticQueryBuilder
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Neokike\LaravelElasticsearch\Queries\Wildcard;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Wildcard;
 
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
-use Neokike\LaravelElasticsearch\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
 class WildcardQuery implements QueryInterface
 {

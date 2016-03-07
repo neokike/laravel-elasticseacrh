@@ -1,5 +1,5 @@
 <?php
-namespace Neokike\LaravelElasticsearch\Facades;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

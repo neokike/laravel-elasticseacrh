@@ -1,8 +1,8 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\Wildcard;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Wildcard;
 
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -15,7 +15,7 @@ class WildcardQuerySpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\Wildcard\WildcardQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Wildcard\WildcardQuery');
     }
 
     function it_returns_wildcard_query_as_an_array()

@@ -1,8 +1,8 @@
 <?php
 
-namespace specs\Neokike\LaravelElasticsearch\Queries\Match;
+namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Match;
 
-use Neokike\LaravelElasticsearch\Exceptions\InvalidArgumentException;
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -11,7 +11,7 @@ class ElasticMatchQuerySpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->beConstructedWith('field', 'value');
-        $this->shouldHaveType('Neokike\LaravelElasticsearch\Queries\Match\ElasticMatchQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMatchQuery');
     }
 
     function it_returns_the_match_query_as_an_array()
