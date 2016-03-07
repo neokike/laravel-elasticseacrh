@@ -122,5 +122,4 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
             'aggs'  => ['field' => 'value']
         ]));
     }
-
 }
