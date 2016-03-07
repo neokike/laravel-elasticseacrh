@@ -1,5 +1,5 @@
 {
-  "name": "neokike/laravel-elasticsearch",
+  "name": "laravel-elasticsearch-query-builder",
   "description": "Package for searching with elasticsearch eloquently",
   "type": "laravel 5, search, elasticsearch",
   "license": "MIT License",
