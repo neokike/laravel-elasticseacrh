@@ -4,7 +4,7 @@ namespace Neokike\LaravelElasticsearchQueryBuilder\Providers;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 
-class LaravelElasticSearchServiceProvider extends ServiceProvider
+class LaravelElasticSearchQueryBuilderServiceProvider extends ServiceProvider
 {
 
     /**
@@ -13,7 +13,6 @@ class LaravelElasticSearchServiceProvider extends ServiceProvider
     public function boot()
     {
         AliasLoader::getInstance()->alias('ElasticQueryBuilder', 'Neokike\LaravelElasticsearchQueryBuilder\Facades\ElasticQueryBuilder');
-
     }
 
     /**
