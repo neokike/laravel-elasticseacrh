@@ -1,0 +1,7 @@
+suites:
+    main:
+        namespace: Neokike\LaravelElasticsearchQueryBuilder\
+        psr4_prefix: Neokike\LaravelElasticsearchQueryBuilder\
+        src_path: src
+        spec_path: tests
+        spec_prefix: specs

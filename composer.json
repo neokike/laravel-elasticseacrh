@@ -1,0 +1,27 @@
+{
+  "name": "neokike/laravel-elasticsearch-query-builder",
+  "description": "Package for generating elasticsearch queries",
+  "type": "laravel 5, search, elasticsearch",
+  "license": "MIT License",
+  "authors": [
+    {
+      "name": "Pedro Gorrin",
+      "email": "pedro.gorrin@ngncloud.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "require-dev": {
+    "fzaninotto/faker": "~1.4",
+    "mockery/mockery": "0.9.*",
+    "phpunit/phpunit": "~4.0",
+    "phpspec/phpspec": "~2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Neokike\\LaravelElasticsearchQueryBuilder\\": "src/"
+    }
+  }
+}
