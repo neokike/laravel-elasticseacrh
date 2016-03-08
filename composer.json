@@ -1,7 +1,9 @@
 {
   "name": "neokike/laravel-elasticsearch-query-builder",
   "description": "Package for generating elasticsearch queries",
-  "type": "laravel5, search, elasticsearch",
+  "keywords": [
+    "laravel5, search, elasticsearch"
+  ],
   "license": "MIT License",
   "authors": [
     {
