@@ -8,6 +8,7 @@ use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidMethodException;
 class ElasticQueryBuilder
 {
     protected $size;
+    protected $index;
     protected $aggregates;
     protected $source = true;
     protected $min_score;
@@ -105,6 +106,8 @@ class ElasticQueryBuilder
         }
 
         $query['body']['_source'] = $this->source;
+        if ($this->index)
+            $query['index'] = $this->index;
         if ($this->type)
             $query['type'] = $this->type;
         if ($this->size !== false)
@@ -188,6 +191,16 @@ class ElasticQueryBuilder
     public function raw($raw)
     {
         $this->raw = $raw;
+        return $this;
+    }
+
+    /**
+     * @param mixed $index
+     * @return ElasticQueryBuilder
+     */
+    public function index($index)
+    {
+        $this->index = $index;
         return $this;
     }
 }

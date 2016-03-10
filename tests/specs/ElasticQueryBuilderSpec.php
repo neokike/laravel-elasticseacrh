@@ -25,6 +25,12 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
         $this->size->shouldEqual(10);
     }
 
+    function it_assign_index_property()
+    {
+        $this->index('my_index')->shouldReturn($this);
+        $this->index->shouldEqual(my_index);
+    }
+
     function it_assign_source_property()
     {
         $this->source('source')->shouldReturn($this);
@@ -74,6 +80,7 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
         $this->min_score(5);
         $this->source('source');
         $this->type('type');
+        $this->index('my_index');
         $search->toArray()->willReturn(['field' => 'value']);
         $aggregates->toArray()->willReturn(['field' => 'value']);
         $this->search($search);
@@ -87,6 +94,7 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
                 'query'     => ['field' => 'value'],
                 'aggs'      => ['field' => 'value']
             ],
+            'index'     => 'my_index',
             'type' => 'type',
         ]);
     }
