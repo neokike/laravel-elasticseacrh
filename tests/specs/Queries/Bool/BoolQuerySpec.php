@@ -9,11 +9,11 @@ use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
 
-class ElasticBoolQuerySpec extends ObjectBehavior
+class BoolQuerySpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Bool\ElasticBoolQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Bool\BoolQuery');
     }
 
     function it_assign_must_query(QueryInterface $query)

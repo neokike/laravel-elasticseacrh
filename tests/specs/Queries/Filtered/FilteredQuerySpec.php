@@ -9,11 +9,11 @@ use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class ElasticFilteredQuerySpec extends ObjectBehavior
+class FilteredQuerySpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Filtered\ElasticFilteredQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Filtered\FilteredQuery');
     }
 
     function it_assign_the_query(QueryInterface $query)

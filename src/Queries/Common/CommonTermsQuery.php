@@ -4,7 +4,7 @@ namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Common;
 
 use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
-class ElasticCommonTermsQuery implements QueryInterface
+class CommonTermsQuery implements QueryInterface
 {
     protected $params;
     private $query;

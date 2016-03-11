@@ -2,7 +2,9 @@
 
 namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Match;
 
-class ElasticMatchPhraseQuery
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
+
+class MatchPhraseQuery implements QueryInterface
 {
     protected $field;
     protected $value;

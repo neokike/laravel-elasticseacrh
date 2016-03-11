@@ -5,7 +5,7 @@ namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\QueryString;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class ElasticQueryStringQuerySpec extends ObjectBehavior
+class QueryStringQuerySpec extends ObjectBehavior
 {
     function let()
     {
@@ -14,7 +14,7 @@ class ElasticQueryStringQuerySpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\QueryString\ElasticQueryStringQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\QueryString\QueryStringQuery');
     }
 
     function it_return_query_string_query_as_an_array()

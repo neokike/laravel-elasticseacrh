@@ -11,7 +11,7 @@ class ElasticMultiMatchQuerySpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->beConstructedWith(['field'], 'value');
-        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMultiMatchQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\MultiMatchQuery');
     }
 
     function it_throw_an_exception_if_type_is_invalid()

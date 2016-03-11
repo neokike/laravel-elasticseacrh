@@ -1,35 +1,35 @@
 <?php
 
-namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\QueryString;
+namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Match;
 
+use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
 use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
-class ElasticQueryStringQuery implements QueryInterface
+class MatchAllQuery implements QueryInterface
 {
-    private $query;
+    /**
+     * @var float
+     */
+    private $boost;
     /**
      * @var array
      */
     private $params;
 
-    public function __construct($query, $params = [])
+    public function __construct($params = [])
     {
-        $this->query = $query;
         $this->params = $params;
     }
-
 
     public function toArray()
     {
         $query = [
-            'query_string' => [
-                'query' => $this->query
-            ]
+            "match_all" => []
         ];
 
         if (count($this->params)) {
             foreach ($this->params as $param => $value) {
-                $query['query_string'][$param] = $value;
+                $query['match_all'][$param] = $value;
             }
         }
 

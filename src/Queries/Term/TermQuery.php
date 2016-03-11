@@ -2,9 +2,10 @@
 
 namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Term;
 
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\FilterInterface;
 use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
-class TermQuery implements QueryInterface
+class TermQuery implements QueryInterface, FilterInterface
 {
 
     private $field;

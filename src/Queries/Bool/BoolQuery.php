@@ -7,7 +7,7 @@ use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\NotEnoughArgumentsExcept
 use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\FilterInterface;
 use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
-class ElasticBoolQuery implements QueryInterface
+class BoolQuery implements QueryInterface
 {
     protected $must = [];
     protected $mustNot = [];

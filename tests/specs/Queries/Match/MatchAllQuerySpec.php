@@ -5,11 +5,11 @@ namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Match;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class ElasticMatchAllQuerySpec extends ObjectBehavior
+class MatchAllQuerySpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMatchAllQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\MatchAllQuery');
     }
 
     function it_returns_the_match_all_query_as_an_array()

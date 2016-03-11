@@ -3,7 +3,7 @@
 namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Bool;
 
 use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
-use Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMatchQuery;
+use Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\MatchQuery;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -11,13 +11,13 @@ class NotQuerySpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->beConstructedWith(new ElasticMatchQuery('nombre', 'pedro'));
+        $this->beConstructedWith(new MatchQuery('nombre', 'pedro'));
         $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Bool\NotQuery');
     }
 
     function it_returns_the_not_query_as_an_array()
     {
-        $this->beConstructedWith(new ElasticMatchQuery('nombre', 'pedro'));
+        $this->beConstructedWith(new MatchQuery('nombre', 'pedro'));
         $this->toArray()->shouldReturn(
             [
                 'not' =>
@@ -35,7 +35,7 @@ class NotQuerySpec extends ObjectBehavior
 
     function it_returns_the_not_query_as_json()
     {
-        $this->beConstructedWith(new ElasticMatchQuery('nombre', 'pedro'));
+        $this->beConstructedWith(new MatchQuery('nombre', 'pedro'));
         $this->toJson()->shouldReturn(
             json_encode([
                 'not' =>

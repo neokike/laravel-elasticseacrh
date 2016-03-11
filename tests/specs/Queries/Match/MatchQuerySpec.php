@@ -6,12 +6,12 @@ use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class ElasticMatchQuerySpec extends ObjectBehavior
+class MatchQuerySpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
         $this->beConstructedWith('field', 'value');
-        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMatchQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\MatchQuery');
     }
 
     function it_returns_the_match_query_as_an_array()

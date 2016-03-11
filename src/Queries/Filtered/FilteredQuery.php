@@ -7,7 +7,7 @@ use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\NotEnoughArgumentsExcept
 use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\FilterInterface;
 use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
-class ElasticFilteredQuery
+class FilteredQuery
 {
     protected $params;
     protected $query;

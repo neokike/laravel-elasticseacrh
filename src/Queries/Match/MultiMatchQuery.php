@@ -5,7 +5,7 @@ namespace Neokike\LaravelElasticsearchQueryBuilder\Queries\Match;
 use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
 use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
-class ElasticMultiMatchQuery extends ElasticMatchQuery implements QueryInterface
+class MultiMatchQuery extends MatchQuery implements QueryInterface
 {
 
     private $acceptedTypes = ['best_fields', 'most_fields', 'cross_fields', 'phrase', 'phrase_prefix'];

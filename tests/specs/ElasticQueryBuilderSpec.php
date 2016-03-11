@@ -4,6 +4,7 @@ namespace specs\Neokike\LaravelElasticsearchQueryBuilder;
 
 use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\AggregatesInterface;
 use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\SortInterface;
 use Neokike\LaravelElasticsearchQueryBuilder\Queries\Bool\ElasticBoolQuery;
 use Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMatchAllQuery;
 use Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMatchPhrasePrefixQuery;
@@ -28,7 +29,7 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
     function it_assign_index_property()
     {
         $this->index('my_index')->shouldReturn($this);
-        $this->index->shouldEqual(my_index);
+        $this->index->shouldEqual('my_index');
     }
 
     function it_assign_source_property()
@@ -55,10 +56,10 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
         $this->type->shouldEqual('type');
     }
 
-    function it_assign_search_property(QueryInterface $search)
+    function it_assign_query_property(QueryInterface $search)
     {
-        $this->search($search)->shouldReturn($this);
-        $this->search->shouldEqual($search);
+        $this->query($search)->shouldReturn($this);
+        $this->query->shouldEqual($search);
     }
 
     function it_assign_aggregates_property(AggregatesInterface $aggregates)
@@ -73,7 +74,7 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
         $this->raw->shouldEqual(['body' => []]);
     }
 
-    function it_return_the_search_array(QueryInterface $search, AggregatesInterface $aggregates)
+    function it_return_the_query_array(QueryInterface $search, AggregatesInterface $aggregates)
     {
         $this->size(10);
         $this->from(0);
@@ -83,10 +84,10 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
         $this->index('my_index');
         $search->toArray()->willReturn(['field' => 'value']);
         $aggregates->toArray()->willReturn(['field' => 'value']);
-        $this->search($search);
+        $this->query($search);
         $this->aggregates($aggregates);
         $this->get()->shouldReturn([
-            'body' => [
+            'body'  => [
                 '_source'   => 'source',
                 'size'      => 10,
                 'from'      => 0,
@@ -94,22 +95,22 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
                 'query'     => ['field' => 'value'],
                 'aggs'      => ['field' => 'value']
             ],
-            'index'     => 'my_index',
-            'type' => 'type',
+            'index' => 'my_index',
+            'type'  => 'type',
         ]);
     }
 
-    function it_return_the_raw_search_array()
+    function it_return_the_raw_query_array()
     {
         $this->raw(['body' => []]);
         $this->get()->shouldReturn(['body' => []]);
     }
 
-    function it_returns_the_search_array(QueryInterface $search, AggregatesInterface $aggregates)
+    function it_returns_the_query_array(QueryInterface $search, AggregatesInterface $aggregates)
     {
         $search->toArray()->willReturn(['field' => 'value']);
         $aggregates->toArray()->willReturn(['field' => 'value']);
-        $this->search($search);
+        $this->query($search);
         $this->aggregates($aggregates);
 
 
@@ -119,11 +120,72 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
         ]);
     }
 
+    function it_returns_the_query_array_with_sort(QueryInterface $search,
+                                                  AggregatesInterface $aggregates,
+                                                  SortInterface $sort1,
+                                                  SortInterface $sort2)
+    {
+        $this->size(10);
+        $this->from(0);
+        $this->min_score(5);
+        $this->source('source');
+        $this->type('type');
+        $this->index('my_index');
+        $search->toArray()->willReturn(['field' => 'value']);
+        $aggregates->toArray()->willReturn(['field' => 'value']);
+        $sort1->toArray()->willReturn([
+            'field' => [
+                'mode'  => 'avg',
+                'order' => 'asc'
+            ]
+        ]);
+        $sort2->toArray()->willReturn([
+            '_geo_distance' => [
+                'mode'         => 'avg',
+                'order'        => 'asc',
+                'pin.location' => [-70, 40],
+                'unit'         => 'km'
+            ]
+        ]);
+        $this->query($search);
+        $this->aggregates($aggregates);
+        $this->addSort($sort1);
+        $this->addSort($sort2);
+        $this->get()->shouldReturn([
+            'body'  => [
+                '_source'   => 'source',
+                'size'      => 10,
+                'from'      => 0,
+                'min_score' => 5,
+                'query'     => ['field' => 'value'],
+                'aggs'      => ['field' => 'value'],
+                'sort'      => [
+                    [
+                        'field' => [
+                            'mode'  => 'avg',
+                            'order' => 'asc'
+                        ]
+                    ],
+                    [
+                        '_geo_distance' => [
+                            'mode'         => 'avg',
+                            'order'        => 'asc',
+                            'pin.location' => [-70, 40],
+                            'unit'         => 'km'
+                        ]
+                    ]
+                ]
+            ],
+            'index' => 'my_index',
+            'type'  => 'type',
+        ]);
+    }
+
     function it_return_the_search_json(QueryInterface $search, AggregatesInterface $aggregates)
     {
         $search->toArray()->willReturn(['field' => 'value']);
         $aggregates->toArray()->willReturn(['field' => 'value']);
-        $this->search($search);
+        $this->query($search);
         $this->aggregates($aggregates);
         $this->searchJson()->shouldReturn(json_encode([
             'query' => ['field' => 'value'],

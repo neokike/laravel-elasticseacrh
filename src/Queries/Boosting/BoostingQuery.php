@@ -7,7 +7,7 @@ use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException
 use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\NotEnoughArgumentsException;
 use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 
-class ElasticBoostingQuery implements QueryInterface
+class BoostingQuery implements QueryInterface
 {
     protected $positive;
     protected $negative;

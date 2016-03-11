@@ -3,7 +3,7 @@
 namespace specs\Neokike\LaravelElasticsearchQueryBuilder\Queries\Bool;
 
 use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidArgumentException;
-use Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\ElasticMatchQuery;
+use Neokike\LaravelElasticsearchQueryBuilder\Queries\Match\MatchQuery;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -11,13 +11,13 @@ class AndQuerySpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->beConstructedWith([new ElasticMatchQuery('nombre', 'pedro'), new ElasticMatchQuery('nombre', 'pedro2')]);
+        $this->beConstructedWith([new MatchQuery('nombre', 'pedro'), new MatchQuery('nombre', 'pedro2')]);
         $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Bool\AndQuery');
     }
 
     function it_returns_the_and_query_as_an_array()
     {
-        $this->beConstructedWith([new ElasticMatchQuery('nombre', 'pedro'), new ElasticMatchQuery('nombre', 'pedro2')]);
+        $this->beConstructedWith([new MatchQuery('nombre', 'pedro'), new MatchQuery('nombre', 'pedro2')]);
         $this->toArray()->shouldReturn(
             [
                 'and' =>
@@ -44,7 +44,7 @@ class AndQuerySpec extends ObjectBehavior
 
     function it_returns_the_and_query_as_json()
     {
-        $this->beConstructedWith([new ElasticMatchQuery('nombre', 'pedro'), new ElasticMatchQuery('nombre', 'pedro2')]);
+        $this->beConstructedWith([new MatchQuery('nombre', 'pedro'), new MatchQuery('nombre', 'pedro2')]);
 
         $this->toJson()->shouldReturn(
             json_encode([

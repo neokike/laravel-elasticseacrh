@@ -8,7 +8,7 @@ use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\QueryInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class ElasticBoostingQuerySpec extends ObjectBehavior
+class BoostingQuerySpec extends ObjectBehavior
 {
     function let()
     {
@@ -18,7 +18,7 @@ class ElasticBoostingQuerySpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Boosting\ElasticBoostingQuery');
+        $this->shouldHaveType('Neokike\LaravelElasticsearchQueryBuilder\Queries\Boosting\BoostingQuery');
     }
 
     function it_assign_positive_query(QueryInterface $query)

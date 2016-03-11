@@ -14,8 +14,9 @@ class ElasticQueryBuilder
     protected $min_score;
     protected $from;
     protected $type;
-    protected $search;
+    protected $sort = [];
     protected $raw;
+    protected $query;
 
     /**
      * @param $size
@@ -77,10 +78,10 @@ class ElasticQueryBuilder
      * @return $this
      * @throws DuplicatedSearchConstraintException
      */
-    public function search($search)
+    public function query($search)
     {
         $this->checkIfSearchIsDefined();
-        $this->search = $search;
+        $this->query = $search;
 
         return $this;
     }
@@ -116,8 +117,13 @@ class ElasticQueryBuilder
             $query['body']['from'] = $this->from;
         if ($this->min_score)
             $query['body']['min_score'] = $this->min_score;
-
         $query['body'] = array_merge($query['body'], $this->searchArray());
+        if (count($this->sort)) {
+            foreach ($this->sort as $sort) {
+                $sortArray[] = $sort->toArray();
+            }
+            $query['body']['sort'] = $sortArray;
+        }
 
         // dd(($query));
         return $query;
@@ -129,8 +135,8 @@ class ElasticQueryBuilder
     public function searchArray()
     {
         $query = [];
-        if ($this->search)
-            $query['query'] = $this->search->toArray();
+        if ($this->query)
+            $query['query'] = $this->query->toArray();
 
         if ($this->aggregates)
             $query['aggs'] = $this->aggregates->toArray();
@@ -168,10 +174,10 @@ class ElasticQueryBuilder
      */
     public function __call($method, $args)
     {
-        if (!method_exists($this->search, $method))
+        if (!method_exists($this->query, $method))
             throw new InvalidMethodException($method);
 
-        $this->search->$method($args[0]);
+        $this->query->$method($args[0]);
         return $this;
     }
 
@@ -180,7 +186,7 @@ class ElasticQueryBuilder
      */
     private function checkIfSearchIsDefined()
     {
-        if ($this->search)
+        if ($this->query)
             throw new DuplicatedSearchConstraintException;
     }
 
@@ -201,6 +207,16 @@ class ElasticQueryBuilder
     public function index($index)
     {
         $this->index = $index;
+        return $this;
+    }
+
+    /**
+     * @param mixed $sort
+     * @return ElasticQueryBuilder
+     */
+    public function addSort($sort)
+    {
+        $this->sort[] = $sort;
         return $this;
     }
 }
