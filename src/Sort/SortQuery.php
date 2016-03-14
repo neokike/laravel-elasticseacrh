@@ -91,7 +91,7 @@ class SortQuery implements SortInterface
                 $this->field => $sortArray
             ];
         } else {
-            $query = [$this->field];
+            $query = $this->field;
         }
 
 
