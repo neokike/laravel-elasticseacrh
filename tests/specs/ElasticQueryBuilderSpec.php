@@ -56,6 +56,12 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
         $this->type->shouldEqual('type');
     }
 
+    function it_assign_explain_property()
+    {
+        $this->type('explain')->shouldReturn($this);
+        $this->type->shouldEqual('explain');
+    }
+
     function it_assign_query_property(QueryInterface $search)
     {
         $this->query($search)->shouldReturn($this);
@@ -82,6 +88,8 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
         $this->source('source');
         $this->type('type');
         $this->index('my_index');
+        $this->explain(true);
+        $this->version(true);
         $search->toArray()->willReturn(['field' => 'value']);
         $aggregates->toArray()->willReturn(['field' => 'value']);
         $this->query($search);
@@ -92,6 +100,8 @@ class ElasticQueryBuilderSpec extends ObjectBehavior
                 'size'      => 10,
                 'from'      => 0,
                 'min_score' => 5,
+                'explain'   => true,
+                'version'   => true,
                 'query'     => ['field' => 'value'],
                 'aggs'      => ['field' => 'value']
             ],

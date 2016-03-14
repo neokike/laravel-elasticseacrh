@@ -4,6 +4,7 @@ namespace Neokike\LaravelElasticsearchQueryBuilder;
 
 use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\DuplicatedSearchConstraintException;
 use Neokike\LaravelElasticsearchQueryBuilder\Exceptions\InvalidMethodException;
+use Neokike\LaravelElasticsearchQueryBuilder\Interfaces\AggregatesInterface;
 
 class ElasticQueryBuilder
 {
@@ -17,6 +18,8 @@ class ElasticQueryBuilder
     protected $sort = [];
     protected $raw;
     protected $query;
+    protected $explain;
+    protected $version;
 
     /**
      * @param $size
@@ -90,7 +93,7 @@ class ElasticQueryBuilder
      * @param $aggregates
      * @return $this
      */
-    public function aggregates($aggregates)
+    public function aggregates(AggregatesInterface $aggregates)
     {
         $this->aggregates = $aggregates;
 
@@ -117,6 +120,10 @@ class ElasticQueryBuilder
             $query['body']['from'] = $this->from;
         if ($this->min_score)
             $query['body']['min_score'] = $this->min_score;
+        if ($this->explain)
+            $query['body']['explain'] = $this->explain;
+        if ($this->version)
+            $query['body']['version'] = $this->version;
         $query['body'] = array_merge($query['body'], $this->searchArray());
         if (count($this->sort)) {
             foreach ($this->sort as $sort) {
@@ -217,6 +224,26 @@ class ElasticQueryBuilder
     public function addSort($sort)
     {
         $this->sort[] = $sort;
+        return $this;
+    }
+
+    /**
+     * @param mixed $explain
+     * @return ElasticQueryBuilder
+     */
+    public function explain($explain)
+    {
+        $this->explain = $explain;
+        return $this;
+    }
+
+    /**
+     * @param mixed $version
+     * @return ElasticQueryBuilder
+     */
+    public function version($version)
+    {
+        $this->version = $version;
         return $this;
     }
 }
