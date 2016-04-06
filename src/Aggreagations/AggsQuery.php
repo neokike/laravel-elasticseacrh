@@ -9,13 +9,18 @@ class AggsQuery implements AggregatesInterface
 
     private $name;
     private $agg;
-    private $params;
+    private $aggParams;
+    /**
+     * @var null
+     */
+    private $aggs;
 
-    public function __construct($name, $agg, $params)
+    public function __construct($name, $agg, $aggParams, $aggs = null)
     {
         $this->name = $name;
         $this->agg = $agg;
-        $this->params = $params;
+        $this->aggParams = $aggParams;
+        $this->aggs = $aggs;
     }
 
     public function toArray()
@@ -26,8 +31,12 @@ class AggsQuery implements AggregatesInterface
                     $this->agg => []
                 ]
         ];
-        if (count($this->params)) {
-            $query[$this->name][$this->agg] = $this->params;
+        if (count($this->aggParams)) {
+            $query[$this->name][$this->agg] = $this->aggParams;
+        }
+
+        if ($this->aggs) {
+            $query[$this->name]['aggs'] = $this->aggs->toArray();
         }
 
         return $query;
